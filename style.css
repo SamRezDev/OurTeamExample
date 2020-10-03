@@ -1,0 +1,162 @@
+@font-face {
+	font-family: Interblack;
+	src: url('webfont/Inter-Black.woff');
+}
+::after {
+	box-sizing: none;
+}
+:root {
+	--color-pink: #faa7ed;
+	--color-navy: #0c1f72;
+	--color-navy-opaque: rgba(6, 0, 79, 0.77);
+	--color-light: #ffffff;
+	--color-dark: #252525;
+}
+
+body {
+	height: 400px;
+	overflow: auto;
+	background-color: var(--color-light);
+	font-size: 24px;
+	min-width: 18rem;
+}
+h1 {
+	margin-left: 25px;
+	font-family: Interblack, serif;
+	animation: 1s Transit;
+}
+
+.container {
+	z-index: -1;
+	color: var(--color-light);
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+}
+
+.card {
+	display: grid;
+	grid-template-rows: auto auto;
+	margin: 25px;
+	background-color: var(--color-dark);
+	filter: grayscale(100%);
+	transition: 0.5s ease-out;
+}
+.card:hover {
+	filter: grayscale(0%);
+}
+.card > .nameandstuff {
+	display: grid;
+	grid-template-columns: 2fr auto;
+
+	margin-left: 25px;
+}
+.arrow {
+	margin-top: 50%;
+}
+.arrow:hover {
+	transition: 0.25s ease;
+	transform: scale(2);
+	cursor: pointer;
+}
+img:first-child {
+	width: 100%;
+	height: 500px;
+	object-fit: cover;
+}
+.bord {
+	border: 2px solid var(--color-dark);
+	animation: 1.5s Fadein;
+}
+#leavebox {
+	margin-bottom: 30px;
+	width: 100%;
+	height: 10%;
+	color: white;
+	background-color: #a62c2b;
+	border-color: white;
+	border-width: 2px;
+	transition-duration: 0.5s;
+}
+#leavebox:hover {
+	background-color: #962727;
+}
+#textcard {
+	color: white;
+}
+.cardinfo {
+	position: absolute;
+	z-index: 1;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+	height: 400px;
+	transform: translate(-50%, -50%);
+	background: var(--color-dark);
+	color: var(--color-light);
+	border-color: var(--color-pink);
+	border-style: solid;
+	border-width: 2px;
+	text-align: center;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+
+@keyframes Fadein {
+	0% {
+		opacity: 0%;
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+@keyframes Transit {
+	0% {
+		margin-left: 100px;
+	}
+	50% {
+		margin-left: 10px;
+	}
+	75% {
+		margin-left: 30px;
+	}
+	100% {
+		margin-left: 25px;
+	}
+}
+@media only screen and (max-width: 600px) {
+	::after {
+		box-sizing: none;
+		overflow: scroll;
+	}
+
+	.card {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.card > .nameandstuff {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 10px auto;
+		width: 20%;
+		height: 35%;
+		text-align: center;
+	}
+	h1 {
+		text-align: center;
+	}
+	img:first-child {
+	}
+	.cardinfo {
+		height: 200px;
+		width: 400px;
+	}
+}
