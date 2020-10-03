@@ -7,18 +7,18 @@ const leavebox = document.getElementById('leavebox');
 const textcard = document.getElementById('textcard');
 case1.addEventListener('click', () => {
 	cardinfo.style.display = 'block';
-	textcard.innerHTML = 'GRILL1 ';
+	textcard.innerHTML = 'This person is a founder ';
 	container.style.opacity = '25%';
 });
 
 case2.addEventListener('click', () => {
 	cardinfo.style.display = 'block';
-	textcard.innerHTML = 'INFO ABOUT THIS GRILL :)  ';
+	textcard.innerHTML = 'This person is smiling !  ';
 	container.style.opacity = '25%';
 });
 case3.addEventListener('click', () => {
 	cardinfo.style.display = 'block';
-	textcard.innerHTML = 'INFO ABOUT THIS GUY PogU';
+	textcard.innerHTML = 'This guy is a CEO too !';
 	container.style.opacity = '25%';
 });
 
